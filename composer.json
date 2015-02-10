@@ -1,0 +1,30 @@
+{
+  "name": "mawoscha/german-localepack-pt-pt",
+  "type": "magento-module",
+  "license":"OSL-3.0",
+  "description":"Portuguese (Portugal) Community Translation",
+  "authors":[
+    {
+      "name":"MaWoScha"
+    }
+  ],
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "extra": {
+    "magento-root-dir": "./",
+    "magento-deploystrategy": "copy",
+    "map": [
+      ["./app/code/community/German/LocalePackPt", "./app/code/community/German/LocalePackPt"],
+      ["./app/etc/modules/German_LocalePackPt.xml", "./app/etc/modules/German_LocalePackPt.xml"],
+      ["./app/locale/de_DE/German_LocalePt.csv", "./app/locale/de_DE/German_LocalePt.csv"],
+      ["./app/locale/en_US/German_LocalePt.csv", "./app/locale/en_US/German_LocalePt.csv"],
+      ["./app/locale/es_ES/German_LocalePt.csv", "./app/locale/es_ES/German_LocalePt.csv"],
+      ["./app/locale/fr_FR/German_LocalePt.csv", "./app/locale/fr_FR/German_LocalePt.csv"],
+      ["./app/locale/pt_PT/German_LocalePt.csv", "./app/locale/pt_PT/German_LocalePt.csv"]
+    ]
+  },
+  "config": {
+    "preferred-install": "dist"
+  }
+}
