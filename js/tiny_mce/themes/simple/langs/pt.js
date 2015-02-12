@@ -1,0 +1,1 @@
+tinyMCE.addI18n('pt.simple',{"cleanup_desc":"Limpo c\u00f3digo confuso","redo_desc":"Refazer (Ctrl+Y)","undo_desc":"Desfazer (Ctrl+Z)","numlist_desc":"Inserir/Remover lista numerada","bullist_desc":"Inserir/Remover lista com marcadores","striketrough_desc":"Tachado","underline_desc":"Sublinhar (Ctrl+U)","italic_desc":"It\u00e1lico (Ctrl+I)","bold_desc":"Negrito (Ctrl+B)"});

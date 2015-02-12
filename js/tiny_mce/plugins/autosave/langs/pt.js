@@ -1,0 +1,1 @@
+tinyMCE.addI18n('pt.autosave',{restore_content: "Restaurar conte\u00fado auto-salvos",warning_message: "Se voc\u00ea restaurar o conte\u00fado salvo, voc\u00ea vai perder todo o conte\u00fado que est\u00e1 atualmente no editor.\n\nTem certeza de que deseja restaurar o conte\u00fado salvo?"});
