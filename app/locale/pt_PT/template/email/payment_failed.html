@@ -1,4 +1,4 @@
-<!--@subject Payment Transaction Failed Reminder @-->
+<!--@subject Operação de pagamento falhou @-->
 <!--@vars
 {"var reason":"Transaction Failed Reason",
 "var checkoutType":"Checkout Type",
@@ -16,18 +16,18 @@
 <table>
     <thead>
         <tr>
-            <th>Operação de pagamento não realizada.</th>
+            <th>Já esteve uma falha na operação de pagamento.</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>
                 <p>
-                    <b>Motivo</b><br />
+                    <b>Razão</b><br />
                     {{var reason}}
                 </p>
                 <p>
-                    <b>Tipo de checkout</b><br />
+                    <b>Tipo de caixa</b><br />
                     {{var checkoutType}}
                 </p>
                 <p>
@@ -35,7 +35,7 @@
                     <a href="mailto:{{var customerEmail}}">{{var customer}}</a> &lt;{{var customerEmail}}&gt;
                 </p>
                 <p>
-                    <b>Itens</b><br />
+                    <b>Artigos</b><br />
                     {{var items}}
                 </p>
                 <p>
@@ -43,15 +43,15 @@
                     {{var total}}
                 </p>
                 <p>
-                    <b>Endereço de faturamento:</b><br />
+                    <b>Endereço de cobrança:</b><br />
                     {{var billingAddress.format('html')}}
                 </p>
                 <p>
-                    <b>Endereço de Envio:</b><br />
+                    <b>Endereço para envio:</b><br />
                     {{var shippingAddress.format('html')}}
                 </p>
                 <p>
-                    <b>Tipo de Frete:</b><br />
+                    <b>Método de Envio:</b><br />
                     {{var shippingMethod}}
                 </p>
                 <p>
@@ -59,7 +59,7 @@
                     {{var paymentMethod}}
                 </p>
                 <p>
-                    <b>Data & Hora:</b><br />
+                    <b>Data e hora:</b><br />
                     {{var dateAndTime}}
                 </p>
             </td>
