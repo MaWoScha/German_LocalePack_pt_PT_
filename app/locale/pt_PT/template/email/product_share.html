@@ -16,8 +16,8 @@
 <table cellpadding="0" cellspacing="0" border="0">
     <tr>
         <td class="action-content">
-            <h1>{{block type="cms/block" block_id="email_template_say_hello"}} {{htmlescape var=$name}}</h1>
-            <p>Por favor, dá uma vista de olhos a: <a href="{{var product_url}}">{{var product_name}}</a></p>
+            <h1>{{block type="cms/block" block_id="email_template_say_hello"}} {{htmlescape var=$order.getCustomerName()}}</h1>
+            <p>Por favor, dá uma vista de olhos a <a href="{{var product_url}}">{{var product_name}}</a></p>
             <table cellspacing="0" cellpadding="0" class="message-container">
                 <tr>
                     <td><strong>Segue a mensagem:</strong> {{var message}}</td>

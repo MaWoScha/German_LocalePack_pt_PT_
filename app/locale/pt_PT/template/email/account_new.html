@@ -2,10 +2,9 @@
 <!--@vars
 {"store url=\"\"":"Store Url",
 "var logo_url":"Email Logo Image Url",
+"var logo_alt":"Email Logo Image Alt",
 "htmlescape var=$customer.name":"Customer Name",
-"store url=\"customer/account/\"":"Customer Account Url",
-"var customer.email":"Customer Email",
-"htmlescape var=$customer.password":"Customer Password"}
+"store url=\"customer/account/\"":"Customer Account Url"}
 @-->
 
 <!--@styles
@@ -20,11 +19,6 @@
             <h1>{{block type="cms/block" block_id="email_template_say_hello"}} {{htmlescape var=$customer.name}}</h1>
             <p>Bem-vindo a {{var store.getFrontendName()}}.</p>
             <p>Para iniciar sessão enquanto visita a nossa loja <a href="{{store url="customer/account/"}}">Inicie Sessção</a> ou vá a <a href="{{store url="customer/account/"}}">Minha Conta</a> que está localizado no topo de cada página e insira o seu email e palavra-passe.</p>
-            <p class="highlighted-text">
-                Use the following values when prompted to log in:<br/>
-                <strong>Email</strong>: {{var customer.email}}<br/>
-                <strong>Password</strong>: {{htmlescape var=$customer.password}}
-            </p>
             <p>Assim que iniciar sessão será capaz de realizar as seguintes acções:</p>
             <ul>
                 <li>Finalizar a encomenda mais rapidamente</li>

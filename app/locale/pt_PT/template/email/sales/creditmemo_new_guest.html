@@ -3,17 +3,19 @@
 {"store url=\"\"":"Store Url",
 "var logo_url":"Email Logo Image Url",
 "var logo_alt":"Email Logo Image Alt",
-"htmlescape var=$billing.getName()":"Guest Customer Name (Billing)",
+"htmlescape var=$billing.getName()":"Guest Customer Name",
 "var store.getFrontendName()":"Store Name",
+
 "var creditmemo.increment_id":"Credit Memo Id",
 "var order.increment_id":"Order Id",
-"var order.billing_address.format('html')":"Billing Address",
+"var order.getBillingAddress().format('html')":"Billing Address",
 "var payment_html":"Payment Details",
-"var order.shipping_address.format('html')":"Shipping Address",
-"var order.shipping_description":"Shipping Description",
+"var order.getShippingAddress().format('html')":"Shipping Address",
+"var order.getShippingDescription()":"Shipping Description",
 "layout handle=\"sales_email_order_creditmemo_items\" creditmemo=$creditmemo order=$order":"Credit Memo Items Grid",
 "var comment":"Credit Memo Comment"}
 @-->
+
 <!--@styles
 @-->
 
@@ -25,7 +27,7 @@
         <td class="email-heading">
             <h1>{{block type="cms/block" block_id="email_template_say_hello"}} {{htmlescape var=$billing.getName()}}</h1>
             <p>Obrigado pela sua encomenda através da {{var store.getFrontendName()}}.</p>
-            <p>Pode verificar o estado da sua encomenda <a href="{{store url="customer/account/"}}"">logging into your account</a>.</p>
+
         </td>
         <td class="store-info">
 {{template config_path="design/email/support"}}
@@ -33,8 +35,8 @@
     </tr>
     <tr>
         <td class="order-details">
-            <h3>Factura corrigida <span class="no-link">#{{var creditmemo.increment_id}}</span></h3>
-            <p>Encomenda <span class="no-link">#{{var order.increment_id}}</span></p>
+            <h3>Factura corrigida <span class="no-link"># {{var creditmemo.increment_id}}</span></h3>
+            <p>Encomenda <span class="no-link"># {{var order.increment_id}}</span></p>
         </td>
     </tr>
     <tr class="order-information">
@@ -51,12 +53,12 @@
                 <tr>
                     <td class="address-details">
                         <h6>Informação de Facturação:</h6>
-                        <p><span class="no-link">{{var order.billing_address.format('html')}}</span></p>
+                        <p><span class="no-link">{{var order.getBillingAddress().format('html')}}</span></p>
                     </td>
                     {{depend order.getIsNotVirtual()}}
                     <td class="address-details">
                         <h6>Informação de Envio:</h6>
-                        <p><span class="no-link">{{var order.shipping_address.format('html')}}</span></p>
+                        <p><span class="no-link">{{var order.getShippingAddress().format('html')}}</span></p>
                     </td>
                     {{/depend}}
                 </tr>
@@ -68,7 +70,7 @@
                     {{depend order.getIsNotVirtual()}}
                     <td class="method-info">
                         <h6>Método de Envio:</h6>
-                        <p>{{var order.shipping_description}}</p>
+                        <p>{{var order.getShippingDescription()}}</p>
                     </td>
                     {{/depend}}
                 </tr>

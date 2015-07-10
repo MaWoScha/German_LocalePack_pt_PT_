@@ -8,13 +8,14 @@
 "store url=\"customer/account/\"":"Customer Account Url",
 "var creditmemo.increment_id":"Credit Memo Id",
 "var order.increment_id":"Order Id",
-"var order.billing_address.format('html')":"Billing Address",
-"payment_html":"Payment Details",
-"var order.shipping_address.format('html')":"Shipping Address",
-"var order.shipping_description":"Shipping Description",
+"var order.getBillingAddress().format('html')":"Billing Address",
+"var payment_html":"Payment Details",
+"var order.getShippingAddress().format('html')":"Shipping Address",
+"var order.getShippingDescription()":"Shipping Description",
 "layout handle=\"sales_email_order_creditmemo_items\" creditmemo=$creditmemo order=$order":"Credit Memo Items Grid",
 "var comment":"Credit Memo Comment"}
 @-->
+
 <!--@styles
 @-->
 
@@ -34,8 +35,8 @@
     </tr>
     <tr>
         <td class="order-details">
-            <h3>Factura corrigida <span class="no-link">#{{var creditmemo.increment_id}}</span></h3>
-            <p>Encomenda <span class="no-link">#{{var order.increment_id}}</span></p>
+            <h3>Factura corrigida <span class="no-link"># {{var creditmemo.increment_id}}</span></h3>
+            <p>Encomenda <span class="no-link"># {{var order.increment_id}}</span></p>
         </td>
     </tr>
     <tr class="order-information">
@@ -52,12 +53,12 @@
                 <tr>
                     <td class="address-details">
                         <h6>Informação de Facturação:</h6>
-                        <p><span class="no-link">{{var order.billing_address.format('html')}}</span></p>
+                        <p><span class="no-link">{{var order.getBillingAddress().format('html')}}</span></p>
                     </td>
                     {{depend order.getIsNotVirtual()}}
                     <td class="address-details">
                         <h6>Informação de Envio:</h6>
-                        <p><span class="no-link">{{var order.shipping_address.format('html')}}</span></p>
+                        <p><span class="no-link">{{var order.getShippingAddress().format('html')}}</span></p>
                     </td>
                     {{/depend}}
                 </tr>
@@ -69,7 +70,7 @@
                     {{depend order.getIsNotVirtual()}}
                     <td class="method-info">
                         <h6>Método de Envio:</h6>
-                        <p>{{var order.shipping_description}}</p>
+                        <p>{{var order.getShippingDescription()}}</p>
                     </td>
                     {{/depend}}
                 </tr>

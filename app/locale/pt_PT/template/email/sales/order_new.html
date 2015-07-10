@@ -15,6 +15,7 @@
 "layout handle=\"sales_email_order_items\" order=$order":"Order Items Grid",
 "var order.getEmailCustomerNote()":"Email Order Note"}
 @-->
+
 <!--@styles
 @-->
 
@@ -69,7 +70,7 @@
                     {{depend order.getIsNotVirtual()}}
                     <td class="method-info">
                         <h6>Método de Envio:</h6>
-                        <p>{{var order.shipping_description}}</p>
+                        <p>{{var order.getShippingDescription()}}</p>
                     </td>
                     {{/depend}}
                 </tr>

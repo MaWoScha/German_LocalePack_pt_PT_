@@ -8,16 +8,16 @@
 "store url=\"customer/account/\"":"Customer Account Url",
 "var invoice.increment_id":"Invoice Id",
 "var order.increment_id":"Order Id",
-"var order.billing_address.format('html')":"Billing Address",
+"var order.getBillingAddress().format('html')":"Billing Address",
 "var payment_html":"Payment Details",
-"var order.shipping_address.format('html')":"Shipping Address",
-"var order.shipping_description":"Shipping Description",
+"var order.getShippingAddress().format('html')":"Shipping Address",
+"var order.getShippingDescription()":"Shipping Description",
 "layout area=\"frontend\" handle=\"sales_email_order_invoice_items\" invoice=$invoice order=$order":"Invoice Items Grid",
 "var comment":"Invoice Comment"}
 @-->
+
 <!--@styles
 @-->
-
 
 {{template config_path="design/email/header"}}
 {{inlinecss file="email-inline.css"}}
@@ -35,8 +35,8 @@
     </tr>
     <tr>
         <td class="order-details">
-            <h3>Fatura <span class="no-link">#{{var invoice.increment_id}}</span></h3>
-            <p>Encomenda <span class="no-link">#{{var order.increment_id}}</span></p>
+            <h3>Fatura <span class="no-link"># {{var invoice.increment_id}}</span></h3>
+            <p>Encomenda <span class="no-link"># {{var order.increment_id}}</span></p>
         </td>
     </tr>
     <tr class="order-information">
@@ -53,12 +53,12 @@
                 <tr>
                     <td class="address-details">
                         <h6>Informação de Facturação:</h6>
-                        <p><span class="no-link">{{var order.billing_address.format('html')}}</span></p>
+                        <p><span class="no-link">{{var order.getBillingAddress().format('html')}}</span></p>
                     </td>
                     {{depend order.getIsNotVirtual()}}
                     <td class="address-details">
                         <h6>Informação de Envio:</h6>
-                        <p><span class="no-link">{{var order.shipping_address.format('html')}}</span></p>
+                        <p><span class="no-link">{{var order.getShippingAddress().format('html')}}</span></p>
                     </td>
                     {{/depend}}
                 </tr>
@@ -70,7 +70,7 @@
                     {{depend order.getIsNotVirtual()}}
                     <td class="method-info">
                         <h6>Método de Envio:</h6>
-                        <p>{{var order.shipping_description}}</p>
+                        <p>{{var order.getShippingDescription()}}</p>
                     </td>
                     {{/depend}}
                 </tr>
